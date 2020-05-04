@@ -7,8 +7,11 @@
 <ul>
     {% for pizza in pizzas %}
     <li>
-        <a href="{% url 'pizzas:pizza' topic.id %}">{{ pizza}}</a>
+        <a href="{% url 'pizzas:pizza' pizza.id %}">{{ pizza }}</a>
     </li>
+    <p>
+        <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new comment</a>
+    </p>
 
     {% empty %}
     <li> No pizzas have been added yet.</li>
