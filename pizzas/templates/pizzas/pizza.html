@@ -16,5 +16,19 @@
     <li> There are no entries for this pizza yet.</li>
     {% endfor %}
 </ul>
+<p>
+    <a href="{% url 'pizzas:new_comment' Pizzas.id %}"> add a comment </a>
+</p>
 
+<p>Comments: </p>
+<ul>
+    {% for Comment in comments %}
+    <li>
+        <p>{{ Comment.text|linebreaks }}</p>
+
+    </li>
+    {% empty %}
+    <li>There are no comments for this topic yet.</li>
+    {% endfor %}
+</ul>
 {% endblock content %}

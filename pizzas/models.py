@@ -21,10 +21,11 @@ class topping (models.Model):
 
 class new_comment (models.Model):
     pizza=models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    date_added= models.DateTimeField(auto_now_add=True) 
     text=models.TextField()
     """ class Meta:
         verbose_name_plural ='entries' """
     
     def __str__(self):
-        return f"{self.name[:50]} ..."
+        return f"{self.text[:50]} ..."
 
